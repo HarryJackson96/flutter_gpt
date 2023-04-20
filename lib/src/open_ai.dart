@@ -33,8 +33,7 @@ class OpenAI implements IOpenAI {
   Future<ChatCompleteResponse> createChatCompletion({
     required ChatCompleteRequest request,
   }) async {
-    const url = OpenApiConsts.baseUrl + OpenApiConsts.completions;
-    return _client.post(url, request.toJson(), (data) {
+    return _client.post(OpenApiConsts.completions, request.toJson(), (data) {
       return ChatCompleteResponse.fromJson(data);
     });
   }
@@ -44,9 +43,8 @@ class OpenAI implements IOpenAI {
     required ChatCompleteRequest request,
     Duration debounce = Duration.zero,
   }) {
-    const url = OpenApiConsts.baseUrl + OpenApiConsts.completions;
     return _client.postStream(
-      url,
+      OpenApiConsts.completions,
       request.toJson()..addAll({'stream': true}),
       (data) {
         return ChatCompleteSSEResponse.fromJson(data);
@@ -63,7 +61,11 @@ class OpenAI implements IOpenAI {
         'Please supply a valid API key! https://platform.openai.com/docs/quickstart/add-your-api-key',
       );
     }
-    final dio = Dio()..interceptors.add(BaseInterceptor(configuration));
+    final dio = Dio(
+      BaseOptions(
+        baseUrl: OpenApiConsts.baseUrl,
+      ),
+    )..interceptors.add(BaseInterceptor(configuration));
     _client = OpenAIClient(dio);
   }
 
