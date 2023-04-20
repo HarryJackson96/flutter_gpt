@@ -1,4 +1,43 @@
 include: package:flutter_lints/flutter.yaml
 
-# Additional information about this file can be found at
-# https://dart.dev/guides/language/analysis-options
+analyzer:
+  exclude: 
+      - '**.freezed.dart'
+      - '**.g.dart'
+  errors:
+    invalid_annotation_target: ignore
+    
+linter:
+  rules:
+    - annotate_overrides
+    - avoid_empty_else
+    - avoid_function_literals_in_foreach_calls
+    - avoid_init_to_null
+    - avoid_null_checks_in_equality_operators
+    - avoid_relative_lib_imports
+    - use_function_type_syntax_for_parameters
+    - avoid_returning_null
+    - avoid_types_as_parameter_names
+    - avoid_unused_constructor_parameters
+    - await_only_futures
+    - camel_case_types
+    - cancel_subscriptions
+    - cascade_invocations
+    - comment_references
+    - constant_identifier_names
+    - control_flow_in_finally
+    - directives_ordering
+    - empty_catches
+    - empty_constructor_bodies
+    - empty_statements
+    - hash_and_equals
+    - implementation_imports
+    - null_closures
+    - omit_local_variable_types
+    - only_throw_errors
+    - overridden_fields
+    - prefer_adjacent_string_concatenation
+    - prefer_single_quotes 
+    - prefer_const_constructors
+    - require_trailing_commas
+    - sort_pub_dependencies
