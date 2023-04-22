@@ -1,18 +1,30 @@
 import 'package:chatgpt_flutter/src/models/shared/shared.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-part 'chat_complete_response.freezed.dart';
-part 'chat_complete_response.g.dart';
 
-@freezed
-class ChatCompleteResponse with _$ChatCompleteResponse {
-  const factory ChatCompleteResponse({
-    required String id,
-    required String object,
-    required int created,
-    required String model,
-    required List<Choice> choices,
-    required Usage usage,
-  }) = _ChatCompleteResponse;
+class ChatCompleteResponse {
+  final String id;
+  final String object;
+  final int created;
+  final String model;
+  final List<Choice> choices;
+  final Usage usage;
 
-  factory ChatCompleteResponse.fromJson(Map<String, dynamic> json) => _$ChatCompleteResponseFromJson(json);
+  const ChatCompleteResponse({
+    required this.id,
+    required this.object,
+    required this.created,
+    required this.model,
+    required this.choices,
+    required this.usage,
+  });
+
+  factory ChatCompleteResponse.fromJson(Map<String, dynamic> json) {
+    return ChatCompleteResponse(
+      id: json['id'],
+      object: json['object'],
+      created: json['created'],
+      model: json['model'],
+      choices: List<Choice>.from(json['choices'].map((x) => Choice.fromJson(x))),
+      usage: Usage.fromJson(json['usage']),
+    );
+  }
 }

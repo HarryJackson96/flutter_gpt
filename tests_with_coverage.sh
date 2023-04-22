@@ -34,11 +34,6 @@ run_tests() {
 run_report() {
     if [[ -f "coverage/lcov.info" ]]; then
         lcov -r coverage/lcov.info \
-            "**.g.dart" \
-            'lib/presentation/core/*' \
-            'lib/data/data_sources/models/*' \
-            "**\*.freezed.dart" \
-            "**\*.gr.dart" \
              -o coverage/lcov-final.info
         genhtml -o coverage coverage/lcov-final.info
         open coverage/index-sort-l.html

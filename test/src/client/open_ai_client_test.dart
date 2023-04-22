@@ -46,7 +46,6 @@ void main() {
         );
 
         final result = await openAIClient.post('', chatCompleteResponseMapStub, (p0) => p0);
-
         expect(result, chatCompleteResponseMapStub);
         verify(mockDio.post(any, data: anything)).called(1);
       });

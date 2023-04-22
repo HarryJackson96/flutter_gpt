@@ -1,5 +1,4 @@
 import 'package:chatgpt_flutter/src/models/models.dart';
-import 'package:chatgpt_flutter/src/models/responses/chat_complete_sse_reponse/choice_sse/choice_sse.dart';
 
 const chatCompleteResponseMapStub = {
   'id': 'chatcmpl-76NYynPr3gfOuPJyguoTVj3bYKztj',
@@ -15,8 +14,8 @@ const chatCompleteResponseMapStub = {
     }
   ]
 };
+
 final chatCompleteResponseStub = ChatCompleteResponse.fromJson(chatCompleteResponseMapStub);
-final chatCompleteResponseJsonStub = chatCompleteResponseStub.toJson();
 
 const chatCompleteRequestMapStub = {
   'model': 'gpt-3.5-turbo',
@@ -26,10 +25,9 @@ const chatCompleteRequestMapStub = {
   'max_tokens': 100
 };
 
-const chat = ChatCompleteRequest(
-  model: ChatModel.gptTurbo,
-  messages: [Message(content: 'Hello')],
-  maxTokens: 100,
+const chatCompleteRequestStub = ChatCompleteRequest(
+  messages: [],
+  maxTokens: 200,
 );
 
 const chatCompleteSSEResponseMap = {
@@ -46,32 +44,30 @@ const chatCompleteSSEResponseMap = {
   ]
 };
 
-const chatCompleteRequestStub = ChatCompleteRequest(
-  messages: [],
-);
-
 final chatCompleteSSEResponseList = [
   const ChatCompleteSSEResponse(
     id: 'chatcmpl-774I8',
     object: 'chat.completion.chunk',
     created: 1681918914,
     model: 'chat-gpt-turbo-0301',
-    choices: [ChoiceSSE(message: Message(role: MessageRole.user, content: 'Hi'), finishReason: null, index: 0)],
+    choices: [Choice(message: Message(role: MessageRole.user, content: 'Hi'), finishReason: null, index: 0)],
   ),
   const ChatCompleteSSEResponse(
     id: 'chatcmpl-774I8',
     object: 'chat.completion.chunk',
     created: 1681918914,
     model: 'chat-gpt-turbo-0301',
-    choices: [ChoiceSSE(message: Message(role: MessageRole.user, content: '!'), finishReason: null, index: 0)],
+    choices: [Choice(message: Message(role: MessageRole.user, content: '!'), finishReason: null, index: 0)],
   ),
   const ChatCompleteSSEResponse(
     id: 'chatcmpl-774I8',
     object: 'chat.completion.chunk',
     created: 1681918914,
     model: 'chat-gpt-turbo-0301',
-    choices: [ChoiceSSE(message: Message(role: MessageRole.user, content: ''), finishReason: 'stop', index: 0)],
+    choices: [Choice(message: Message(role: MessageRole.user, content: ''), finishReason: 'stop', index: 0)],
   ),
 ];
 
 final chatCompleteSSEResponseStreamStub = Stream.fromIterable(chatCompleteSSEResponseList);
+
+const messageStub = Message(role: MessageRole.user, content: 'Hello');

@@ -1,16 +1,25 @@
 import 'package:chatgpt_flutter/src/models/shared/message/message.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-part 'choice.freezed.dart';
-part 'choice.g.dart';
 
-@freezed
-class Choice with _$Choice {
-  @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory Choice({
-    Message? message,
-    String? finishReason,
-    required int index,
-  }) = _Choice;
+class Choice {
+  final int index;
+  final Message? message;
+  final String? finishReason;
 
-  factory Choice.fromJson(Map<String, dynamic> json) => _$ChoiceFromJson(json);
+  const Choice({
+    required this.index,
+    this.message,
+    this.finishReason,
+  });
+
+  factory Choice.fromJson(Map<String, dynamic> json) {
+    return Choice(
+      message: json['message'] != null
+          ? Message.fromJson(json['message'])
+          : json['delta'] != null
+              ? Message.fromJson(json['delta'])
+              : null,
+      finishReason: json['finish_reason'],
+      index: json['index'],
+    );
+  }
 }

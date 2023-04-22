@@ -4,7 +4,7 @@ import 'package:chatgpt_flutter/src/client/open_ai_client.dart';
 import 'package:chatgpt_flutter/src/models/models.dart';
 import 'package:chatgpt_flutter/src/utils/constants.dart';
 import 'package:dio/dio.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter/material.dart';
 
 abstract class IOpenAI {
   Future<ChatCompleteResponse> createChatCompletion({
@@ -18,8 +18,9 @@ abstract class IOpenAI {
 class OpenAI implements IOpenAI {
   OpenAI._();
 
-  /// Initializes [OpenAI] instance.
-  /// Setup Http client
+  /// Initializes and returns [OpenAI] instance.
+  ///
+  /// [configuration] handles injecting apiKey and organizationId.
   factory OpenAI.init({
     required OpenAIConfiguration configuration,
   }) {
@@ -29,6 +30,7 @@ class OpenAI implements IOpenAI {
 
   late OpenAIClient _client;
 
+  /// Returns a Future object of type [ChatCompleteResponse] from a new or existing chat conversation.
   @override
   Future<ChatCompleteResponse> createChatCompletion({
     required ChatCompleteRequest request,
@@ -38,6 +40,12 @@ class OpenAI implements IOpenAI {
     });
   }
 
+  /// Returns a Stream of type [ChatCompleteSSEResponse] from a new or existing chat conversation.
+  /// Tokens are sent as data-only server-sent-events (SSE) as they become available. The stream is
+  /// terminated by a data: [DONE] message.
+  ///
+  /// [debounce] defines the delay duration on the [Stream] such that items from the source are only
+  /// emitted after the [debounce] duration passes.
   @override
   Stream<ChatCompleteSSEResponse> createChatCompletionStream({
     required ChatCompleteRequest request,
@@ -69,7 +77,7 @@ class OpenAI implements IOpenAI {
     _client = OpenAIClient(dio);
   }
 
-  /// Setter method for testing purposes
+  /// Setter method for testing purposes.
   @visibleForTesting
   void setClient(OpenAIClient client) {
     _client = client;

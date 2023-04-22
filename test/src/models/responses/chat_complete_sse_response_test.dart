@@ -6,14 +6,14 @@ import '../../../stubs/stubs.dart';
 
 void main() {
   group('ChatCompleteSSEResponse', () {
-    test('fromJson', () {
+    test('fromJson returns correct ChatCompleteSSEResponse object', () {
       final chatCompleteResponse = ChatCompleteSSEResponse.fromJson(
         chatCompleteSSEResponseMap,
       );
       expect(chatCompleteResponse.id, 'chatcmpl-76NYynPr3gfOuPJyguoTVj3bYKztj');
       expect(chatCompleteResponse.object, 'chat.completion.chunk');
       expect(chatCompleteResponse.created, 1681754900);
-      expect(chatCompleteResponse.model, ChatModel.gptTurbo.value);
+      expect(chatCompleteResponse.model, ChatModel.gptTurbo0301.value);
       expect(chatCompleteResponse.choices.length, 1);
       expect(chatCompleteResponse.usage, null);
     });

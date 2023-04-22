@@ -1,15 +1,19 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-part 'usage.freezed.dart';
-part 'usage.g.dart';
+class Usage {
+  final int promptTokens;
+  final int completionTokens;
+  final int totalTokens;
 
-@freezed
-class Usage with _$Usage {
-  @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory Usage({
-    required int promptTokens,
-    required int completionTokens,
-    required int totalTokens,
-  }) = _Usage;
+  const Usage({
+    required this.promptTokens,
+    required this.completionTokens,
+    required this.totalTokens,
+  });
 
-  factory Usage.fromJson(Map<String, dynamic> json) => _$UsageFromJson(json);
+  factory Usage.fromJson(Map<String, dynamic> json) {
+    return Usage(
+      promptTokens: json['prompt_tokens'],
+      completionTokens: json['completion_tokens'],
+      totalTokens: json['total_tokens'],
+    );
+  }
 }

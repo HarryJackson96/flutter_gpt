@@ -1,7 +1,7 @@
 class OpenApiConsts {
   static const baseUrl = 'https://api.openai.com/v1/';
   static const completions = 'chat/completions';
-  static const model = 'models';
+  static const models = 'models';
 
   static Map<String, String> headers(String token, String? organizationId) {
     return {
@@ -11,8 +11,11 @@ class OpenApiConsts {
     };
   }
 
-  ///chat complete 3.5 and gpt-4
-  static const kChatGptTurboModel = 'gpt-3.5-turbo'; // gpt 3.5
-  static const kChatGptTurbo0301Model = 'gpt-3.5-turbo-0301';
-  static const kChatGpt4 = 'gpt-4';
+  // Chat Completions
+  static const gptTurboModel = 'gpt-3.5-turbo';
+  static const gptTurbo0301Model = 'gpt-3.5-turbo-0301';
+
+  /// In limited beta and only accessible for those who have been granted access.
+  /// https://platform.openai.com/docs/models/gpt-4
+  static const gpt4 = 'gpt-4';
 }
