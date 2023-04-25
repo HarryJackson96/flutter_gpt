@@ -2,7 +2,6 @@ import 'package:chatgpt_flutter/src/client/exceptions/exceptions.dart';
 import 'package:chatgpt_flutter/src/client/interceptors/base_interceptor.dart';
 import 'package:chatgpt_flutter/src/client/open_ai_client.dart';
 import 'package:chatgpt_flutter/src/models/models.dart';
-import 'package:chatgpt_flutter/src/models/shared/configuration/client_setup.dart';
 import 'package:chatgpt_flutter/src/utils/constants.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';

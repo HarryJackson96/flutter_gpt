@@ -116,7 +116,7 @@ class _OpenAIExampleState extends State<OpenAIExample> {
                         focusedBorder: _border,
                         isDense: true,
                       ),
-                      onFieldSubmitted: _sendMessage,
+                      onFieldSubmitted: (value) => _sendMessage(value),
                     ),
                   ),
                   const SizedBox(width: 12),
@@ -141,7 +141,7 @@ class _OpenAIExampleState extends State<OpenAIExample> {
     );
   }
 
-  void _sendMessage(String message) {
+  void _sendMessage(String message, {bool streamedResponse = true}) {
     // reset controller.
     _controller.clear();
 
@@ -157,13 +157,15 @@ class _OpenAIExampleState extends State<OpenAIExample> {
       });
 
       isLoading = true;
-      _getStreamedMessage(message);
-
-      // Displays whole message when Future completes successfully.
-      // _getFutureMessage(message);
+      if (streamedResponse) {
+        _getStreamedMessage(message);
+      } else {
+        _getFutureMessage(message);
+      }
     }
   }
 
+  /// Displays whole message when Future completes successfully.
   Future<void> _getFutureMessage(String message) async {
     try {
       final messageResponse = await _openAI.createChatCompletion(
