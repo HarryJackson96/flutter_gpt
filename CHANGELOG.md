@@ -1,3 +1,5 @@
-## 0.0.1
+## 1.0.0
 
-* TODO: Describe initial release.
+* Added ChatCompletion support.
+* Added ChatCompletionStream (SSE/ Server Sent Events) support.
+* Added Example chatbot app displaying package usage. 
