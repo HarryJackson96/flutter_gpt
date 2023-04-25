@@ -6,7 +6,8 @@ class _StreamTransformerConsts {
   static const endOfStream = '[DONE]';
 }
 
-StreamTransformer<Uint8List, List<int>> unit8Transformer = StreamTransformer.fromHandlers(
+StreamTransformer<Uint8List, List<int>> unit8Transformer =
+    StreamTransformer.fromHandlers(
   handleData: (data, sink) => sink.add(List<int>.from(data)),
 );
 
@@ -20,6 +21,8 @@ StreamTransformer<String, T> responseTransformer<T>(
           if (_StreamTransformerConsts.endOfStream != jsonString) {
             final json = jsonDecode(jsonString);
             sink.add(onSuccess(json));
+          } else {
+            sink.close();
           }
         }
       },

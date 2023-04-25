@@ -1,7 +1,7 @@
 name: chatgpt_flutter
 description: A Flutter package for interacting with OpenAI API's (GPT-3). Easily integrate OpenAI's powerful AI models into your application.
-version: 0.0.1
-homepage:
+version: 1.0.0
+homepage: https://github.com/HarryJackson96/chatgpt_flutter
 
 environment:
   sdk: '>=2.19.6 <3.0.0'
@@ -11,7 +11,6 @@ dependencies:
   dio: ^5.1.1  
   flutter:
     sdk: flutter
-  http: ^0.13.5
   rxdart: ^0.27.7
 
 dev_dependencies:

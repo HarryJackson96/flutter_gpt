@@ -1,4 +1,4 @@
-import 'package:chatgpt_flutter/src/models/shared/configuration/configuration.dart';
+import 'package:chatgpt_flutter/src/models/shared/configuration/open_ai_configuration.dart';
 import 'package:chatgpt_flutter/src/utils/constants.dart';
 import 'package:dio/dio.dart';
 

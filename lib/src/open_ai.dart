@@ -2,6 +2,7 @@ import 'package:chatgpt_flutter/src/client/exceptions/exceptions.dart';
 import 'package:chatgpt_flutter/src/client/interceptors/base_interceptor.dart';
 import 'package:chatgpt_flutter/src/client/open_ai_client.dart';
 import 'package:chatgpt_flutter/src/models/models.dart';
+import 'package:chatgpt_flutter/src/models/shared/configuration/client_setup.dart';
 import 'package:chatgpt_flutter/src/utils/constants.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +24,9 @@ class OpenAI implements IOpenAI {
   /// [configuration] handles injecting apiKey and organizationId.
   factory OpenAI.init({
     required OpenAIConfiguration configuration,
+    ClientSetup? clientSetup,
   }) {
-    final instance = OpenAI._().._initialize(configuration);
+    final instance = OpenAI._().._initialize(configuration, clientSetup);
     return instance;
   }
 
@@ -42,7 +44,7 @@ class OpenAI implements IOpenAI {
 
   /// Returns a Stream of type [ChatCompleteSSEResponse] from a new or existing chat conversation.
   /// Tokens are sent as data-only server-sent-events (SSE) as they become available. The stream is
-  /// terminated by a data: [DONE] message.
+  /// terminated by a data: ```DONE``` message.
   ///
   /// [debounce] defines the delay duration on the [Stream] such that items from the source are only
   /// emitted after the [debounce] duration passes.
@@ -63,6 +65,7 @@ class OpenAI implements IOpenAI {
 
   void _initialize(
     OpenAIConfiguration configuration,
+    ClientSetup? clientSetup,
   ) {
     if (configuration.apiKey.isEmpty) {
       throw MissingKeyException(
@@ -72,6 +75,9 @@ class OpenAI implements IOpenAI {
     final dio = Dio(
       BaseOptions(
         baseUrl: OpenApiConsts.baseUrl,
+        sendTimeout: clientSetup?.sendTimeout,
+        connectTimeout: clientSetup?.connectTimeout,
+        receiveTimeout: clientSetup?.receiveTimeout,
       ),
     )..interceptors.add(BaseInterceptor(configuration));
     _client = OpenAIClient(dio);

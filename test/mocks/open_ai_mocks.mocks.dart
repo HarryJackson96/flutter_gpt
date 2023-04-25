@@ -6,7 +6,7 @@
 import 'dart:async' as _i7;
 
 import 'package:chatgpt_flutter/src/client/open_ai_client.dart' as _i11;
-import 'package:chatgpt_flutter/src/models/shared/configuration/configuration.dart'
+import 'package:chatgpt_flutter/src/models/shared/configuration/open_ai_configuration.dart'
     as _i10;
 import 'package:dio/dio.dart' as _i8;
 import 'package:dio/src/adapter.dart' as _i3;
