@@ -32,8 +32,9 @@ ChatGPT_Flutter is an open-source Client for interacting with OpenAI's APIs allo
 
  - [x] [Package installation](#package-installation)
  - [x] [Initalize OpenAI instance](#initialize-openai-instance)
- - [x] [Chat Completions (ChatGPT)]()
-    - [x] [With Stream responses (Server Sent Event)](#create-chat-completion-stream)
+ - [x] [Chat Completions (ChatGPT)](#chat-completions-chatgpt)
+    - [x] [With Future response](#create-chat-completion)
+    - [x] [With Stream response (Server Sent Event)](#create-chat-completion-stream)
 
 ## Package installation
 ```dart
@@ -60,7 +61,7 @@ final instance = OpenAI.init(
 
 Once you have initalized OpenAI, you can then use the instance to create chat completion.
 
-### Create chat completion:
+### Create chat completion (Future):
 Returns a Future object of type `ChatCompleteResponse`. Note this returns the whole response after the completion request
 has finished.
 ```dart
