@@ -26,6 +26,7 @@ ChatGPT Flutter
 ChatGPT_Flutter is an open-source Client for interacting with OpenAI's APIs allowing developers to easily integrate and use OpenAI's AI models into their Flutter/ Dart application.
 
 ## Demo
+![demo](https://user-images.githubusercontent.com/120326747/234274461-10ec461b-7c1d-4201-ae07-7da40856a764.gif)
 
 ## Features
 
