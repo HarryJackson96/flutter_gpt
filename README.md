@@ -38,7 +38,7 @@ flutter_gpt is an open-source Client for interacting with OpenAI's APIs allowing
 
 ## Package installation
 ```dart
-chatgpt_flutter: 1.0.0
+flutter_gpt: 1.0.0
 ```
 
 ## Initialize OpenAI Instance
