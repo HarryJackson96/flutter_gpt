@@ -30,7 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  chatgpt_flutter: 
+  flutter_gpt: 
     path: ../
 
 

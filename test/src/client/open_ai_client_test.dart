@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'package:chatgpt_flutter/src/client/exceptions/request_failed_exception.dart';
-import 'package:chatgpt_flutter/src/client/open_ai_client.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_gpt/src/client/exceptions/request_failed_exception.dart';
+import 'package:flutter_gpt/src/client/open_ai_client.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 

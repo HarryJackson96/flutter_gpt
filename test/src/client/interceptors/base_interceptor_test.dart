@@ -1,6 +1,6 @@
-import 'package:chatgpt_flutter/src/client/interceptors/base_interceptor.dart';
-import 'package:chatgpt_flutter/src/utils/constants.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_gpt/src/client/interceptors/base_interceptor.dart';
+import 'package:flutter_gpt/src/utils/constants.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 

@@ -1,4 +1,4 @@
-import 'package:chatgpt_flutter/src/models/shared/message/message.dart';
+import 'package:flutter_gpt/src/models/shared/message/message.dart';
 
 class Choice {
   final int index;

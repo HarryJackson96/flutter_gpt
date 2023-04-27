@@ -1,5 +1,5 @@
-import 'package:chatgpt_flutter/src/models/requests/chat_complete_request/chat_complete_request.dart';
-import 'package:chatgpt_flutter/src/models/responses/chat_complete_sse_reponse/chat_complete_sse_response.dart';
+import 'package:flutter_gpt/src/models/requests/chat_complete_request/chat_complete_request.dart';
+import 'package:flutter_gpt/src/models/responses/chat_complete_sse_reponse/chat_complete_sse_response.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../../stubs/stubs.dart';

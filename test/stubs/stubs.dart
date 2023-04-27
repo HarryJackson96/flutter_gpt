@@ -1,4 +1,4 @@
-import 'package:chatgpt_flutter/src/models/models.dart';
+import 'package:flutter_gpt/src/models/models.dart';
 
 const chatCompleteResponseMapStub = {
   'id': 'chatcmpl-76NYynPr3gfOuPJyguoTVj3bYKztj',

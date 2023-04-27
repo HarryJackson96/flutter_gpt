@@ -1,4 +1,4 @@
-import 'package:chatgpt_flutter/src/utils/constants.dart';
+import 'package:flutter_gpt/src/utils/constants.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 const mockToken = 'sh-suhcqde';
