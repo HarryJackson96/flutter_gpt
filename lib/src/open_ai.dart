@@ -1,10 +1,10 @@
-import 'package:chatgpt_flutter/src/client/exceptions/exceptions.dart';
-import 'package:chatgpt_flutter/src/client/interceptors/base_interceptor.dart';
-import 'package:chatgpt_flutter/src/client/open_ai_client.dart';
-import 'package:chatgpt_flutter/src/models/models.dart';
-import 'package:chatgpt_flutter/src/utils/constants.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gpt/src/client/exceptions/exceptions.dart';
+import 'package:flutter_gpt/src/client/interceptors/base_interceptor.dart';
+import 'package:flutter_gpt/src/client/open_ai_client.dart';
+import 'package:flutter_gpt/src/models/models.dart';
+import 'package:flutter_gpt/src/utils/constants.dart';
 
 abstract class IOpenAI {
   Future<ChatCompleteResponse> createChatCompletion({

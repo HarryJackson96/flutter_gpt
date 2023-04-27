@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:chatgpt_flutter/src/client/exceptions/exceptions.dart';
-import 'package:chatgpt_flutter/src/client/transformers/stream_transformer.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_gpt/src/client/exceptions/exceptions.dart';
+import 'package:flutter_gpt/src/client/transformers/stream_transformer.dart';
 import 'package:rxdart/rxdart.dart';
 
 class OpenAIClient {

@@ -1,4 +1,4 @@
-import 'package:chatgpt_flutter/src/models/models.dart';
+import 'package:flutter_gpt/src/models/models.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../../../stubs/stubs.dart';

@@ -1,4 +1,4 @@
-import 'package:chatgpt_flutter/chatgpt_flutter.dart';
+import 'package:flutter_gpt/flutter_gpt.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

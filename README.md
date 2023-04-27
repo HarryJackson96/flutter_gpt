@@ -11,19 +11,19 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-ChatGPT Flutter
+Flutter GPT
 ==
 <br>
 <p align="center">
-<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/HarryJackson96/chatgpt_flutter">
-<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/HarryJackson96/chatgpt_flutter">
-<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/HarryJackson96/chatgpt_flutter?style=social">
-<img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/HarryJackson96/chatgpt_flutter/dart.yml?label=tests">
-<img alt="GitHub" src="https://img.shields.io/github/license/HarryJackson96/chatgpt_flutter">
+<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/HarryJackson96/flutter_gpt">
+<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/HarryJackson96/flutter_gpt">
+<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/HarryJackson96/flutter_gpt?style=social">
+<img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/HarryJackson96/flutter_gpt/dart.yml?label=tests">
+<img alt="GitHub" src="https://img.shields.io/github/license/HarryJackson96/flutter_gpt">
 </p>
 </br>
 
-ChatGPT_Flutter is an open-source Client for interacting with OpenAI's APIs allowing developers to easily integrate and use OpenAI's AI models into their Flutter/ Dart application.
+flutter_gpt is an open-source Client for interacting with OpenAI's APIs allowing developers to easily integrate and use OpenAI's AI models into their Flutter/ Dart application.
 
 ## Demo
 ![demo](https://user-images.githubusercontent.com/120326747/234274461-10ec461b-7c1d-4201-ae07-7da40856a764.gif)

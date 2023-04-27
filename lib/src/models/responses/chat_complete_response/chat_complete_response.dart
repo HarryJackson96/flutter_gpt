@@ -1,4 +1,4 @@
-import 'package:chatgpt_flutter/src/models/shared/shared.dart';
+import 'package:flutter_gpt/src/models/shared/shared.dart';
 
 class ChatCompleteResponse {
   final String id;

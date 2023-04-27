@@ -1,5 +1,5 @@
-import 'package:chatgpt_flutter/src/models/shared/message/message.dart';
-import 'package:chatgpt_flutter/src/utils/constants.dart';
+import 'package:flutter_gpt/src/models/shared/message/message.dart';
+import 'package:flutter_gpt/src/utils/constants.dart';
 
 enum ChatModel {
   gptTurbo(OpenApiConsts.gptTurboModel),

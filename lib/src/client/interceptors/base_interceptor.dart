@@ -1,6 +1,6 @@
-import 'package:chatgpt_flutter/src/models/shared/configuration/open_ai_configuration.dart';
-import 'package:chatgpt_flutter/src/utils/constants.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_gpt/src/models/shared/configuration/open_ai_configuration.dart';
+import 'package:flutter_gpt/src/utils/constants.dart';
 
 class BaseInterceptor extends Interceptor {
   final OpenAIConfiguration _configuration;

@@ -1,4 +1,4 @@
-library chatgpt_flutter;
+library flutter_gpt;
 
 export 'src/client/exceptions/exceptions.dart';
 export 'src/client/open_ai_client.dart';

@@ -1,5 +1,5 @@
-import 'package:chatgpt_flutter/src/models/shared/choice/choice.dart';
-import 'package:chatgpt_flutter/src/models/shared/usage/usage.dart';
+import 'package:flutter_gpt/src/models/shared/choice/choice.dart';
+import 'package:flutter_gpt/src/models/shared/usage/usage.dart';
 
 class ChatCompleteSSEResponse {
   final String id;

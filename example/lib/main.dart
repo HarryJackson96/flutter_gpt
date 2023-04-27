@@ -1,4 +1,4 @@
-import 'package:chatgpt_flutter/chatgpt_flutter.dart';
+import 'package:flutter_gpt/flutter_gpt.dart';
 import 'package:flutter/material.dart';
 
 // Simple model for encapsulating message data.
@@ -248,9 +248,7 @@ class ChatBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: role == MessageRole.user
-          ? Colors.transparent
-          : const Color.fromARGB(255, 232, 232, 232),
+      color: role == MessageRole.user ? Colors.transparent : const Color.fromARGB(255, 232, 232, 232),
       padding: const EdgeInsets.all(12),
       child: Row(
         children: [
